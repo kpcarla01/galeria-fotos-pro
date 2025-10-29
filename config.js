@@ -1,8 +1,8 @@
 // config.js
 const CONFIG = {
   photographer: "Alejandra Medina",
-  sheetId: "TU_SHEET_ID_AQUI",
-  sheetName: "EVENTO1", // Cambia por hoja
+  sheetId: "1YESyou-sjFPu3UrFaopNBeuPO1VVaQPPaIPzXMvDQ5Y",
+  sheetName: "01-Sofi15", // Cambia por hoja
   apiKey: "TU_API_KEY_AQUI", // Opcional si es público
   whatsapp: "5493534813788", // Cambia aquí
   colors: {
