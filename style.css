@@ -1,0 +1,165 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Roboto', sans-serif; 
+  background: #000; 
+  color: #fff; 
+  line-height: 1.6; 
+}
+
+header { 
+  text-align: center; 
+  padding: 2.5rem 1rem; 
+  background: #111; 
+}
+.photographer { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.8rem; 
+  font-weight: 700; 
+  color: #fff; 
+}
+
+.cover { 
+  position: relative; 
+  height: 60vh; 
+  background: url('') center/cover no-repeat; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+}
+.cover::before { 
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  background: rgba(0,0,0,0.5); 
+}
+.cover-content { 
+  position: relative; 
+  z-index: 1; 
+}
+.event-title { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.2rem; 
+  font-weight: 700; 
+  margin-bottom: 0.5rem; 
+}
+.event-date { 
+  font-size: 1.3rem; 
+  color: #ccc; 
+}
+
+.filters { 
+  padding: 2.5rem 1rem; 
+  text-align: center; 
+  background: #111; 
+}
+.filter-btn { 
+  background: #333; 
+  color: #fff; 
+  border: none; 
+  padding: 0.75rem 1.5rem; 
+  margin: 0 0.5rem; 
+  border-radius: 2rem; 
+  cursor: pointer; 
+  font-size: 1rem; 
+  transition: all 0.3s ease; 
+}
+.filter-btn.active, 
+.filter-btn:hover { 
+  background: var(--primary); 
+}
+
+.gallery { 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 2.5rem 1rem; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+}
+.photo-card { 
+  position: relative; 
+  aspect-ratio: 1; 
+  overflow: hidden; 
+  border-radius: 0.5rem; 
+  cursor: pointer; 
+}
+.photo-card img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.4s ease; 
+}
+.photo-card:hover img { 
+  transform: scale(1.08); 
+}
+.photo-overlay { 
+  position: absolute; 
+  inset: 0; 
+  background: rgba(0,0,0,0.7); 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.photo-card:hover .photo-overlay { 
+  opacity: 1; 
+}
+.photo-overlay span { 
+  font-size: 1.2rem; 
+  font-weight: 500; 
+}
+
+/* Modal */
+.modal { 
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  inset: 0; 
+  background: rgba(0,0,0,0.95); 
+  align-items: center; 
+  justify-content: center; 
+}
+.modal-content { 
+  position: relative; 
+  max-width: 90%; 
+  max-height: 90vh; 
+}
+.modal img { 
+  width: 100%; 
+  height: auto; 
+  border-radius: 0.5rem; 
+}
+.close { 
+  position: absolute; 
+  top: -2.5rem; 
+  right: 0; 
+  color: #fff; 
+  font-size: 2.5rem; 
+  cursor: pointer; 
+}
+.nav-arrow { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.5); 
+  color: #fff; 
+  border: none; 
+  font-size: 2rem; 
+  padding: 0.5rem 1rem; 
+  cursor: pointer; 
+  border-radius: 0.25rem; 
+}
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+@media (max-width: 768px) {
+  .event-title { font-size: 2.2rem; }
+  .gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .filter-btn { margin: 0.25rem; padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
